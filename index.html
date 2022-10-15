@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <title>FlowViz using three.js</title>
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="/src/css/style.css">
+        <script src="lib/js/three.js"></script>
+        <code><script src="/lib/js/d3.min.js"></script></code>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/lib/js/OrbitControls.js"></script>
+        
+</head>
+
+<body>
+        <h1>Particle Flow visualization using Three.js</h1>
+        <div class = "container">
+                <div class="canvas-row">
+                        <div class="scene-col">
+                                <canvas class="scene"></canvas>
+                        </div>
+                        <div class="cross-section-col">
+                                <div id="cross-section-view">
+                                        <svg id="cross-section" height="500" width="600"></svg>
+                                </div>
+                        </div>
+                </div>
+                <div class="controls-row">
+                        <span>Plane Z: </span>
+                        <span id="plane-z-value">0</span>
+                        <div class="slidecontainer">
+                                <input  class="slider" id="z-slidebar" type="range" max="10" min="0" value="0" step="0.01" oninput="ZPlaneSlide()">
+                                <input type="reset" onclick="reset()">
+                        </div>
+                </div>
+                <div class="instructions-credits">
+                        <h2>Steps for interaction</h2>
+                        <ul>
+                                <li>To rotate the image left click and move the mouse</li>
+                                <li>Right click on the image to pan the cylinder</li>
+                                <li>To move the 2D plane for the projection use the slider</li>
+                                <li>Press reset to revert to the initial visualization</li>
+                        </ul>
+                        <h2>Credits</h2>
+                        <ul>
+                                <li>Three.js: <a href="https://threejs.org/docs/#manual/en/introduction/Creating-a-scene">Documentation</a>
+                                , D3.js: <a href="https://github.com/d3/d3/blob/main/LICENSE">LICENSE</a>, 
+                                Code references: <a href="https://stackoverflow.com/questions/29916886/three-js-add-plane-to-the-scene">link1</a>,
+                                 <a href="https://threejs.org/docs/?q=orb#examples/en/controls/OrbitControls">link2</a>, 
+                                 <a href="https://eyeseast.github.io/visible-data/2013/08/27/responsive-legends-with-d3/">link3</a>
+                        </li>
+                        </ul>
+
+                </div>
+        </div>
+        
+        <script src="src/js/scene.js"></script>
+        <script src="src/js/particleSystem.js"></script>
+</body>
+
+</html>
